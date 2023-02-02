@@ -13,11 +13,16 @@ export class MovieApiServiceService {
   baseUrl ="https://api.themoviedb.org/3"
   apiKey = "f5ccb847e5f8da5f1c2066291111dd1d"
 
+  //banner data
   bannerApiData():Observable<any>{
     return this.http.get(`${this.baseUrl}/trending/all/week?api_key=${this.apiKey}`);
   }
 
- 
+ //trending movies data
+
+ trendingMovieApiData():Observable<any>{
+  return this.http.get(`${this.baseUrl}/trending/all/day?api_key=${this.apiKey}`);
+ }
 
 
 }
